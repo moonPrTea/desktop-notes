@@ -61,7 +61,8 @@ on a Mac configured with Xcode and a signing identity.
 
 - Create a note from the menu bar, or press ⌘N while the app is active.
 - Write directly on the paper; press ⌘Z to undo an edit.
-- Drag the white margin to move a note, or drag an edge to resize it.
+- Drag the white margin to move a note. Drag the small grip in the bottom-right
+  corner to resize it; the top-left corner stays in place and the size is saved.
 - The first line becomes a heading; the rest stays small and readable.
 - Open the ellipsis menu for new notes, floating above windows, hiding, and trash.
 - Swipe horizontally with two fingers over the margin or press ⌘W to hide a note.

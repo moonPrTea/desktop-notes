@@ -35,6 +35,10 @@ final class NoteWindow: NSPanel, NSWindowDelegate, NSTextViewDelegate {
         paper.onHide = { [weak self] in self?.hideNote() }
         configureEditor()
         configureControls()
+        let resizeHandle = ResizeHandle(frame: NSRect(x: frame.width - 50, y: frame.height - 51,
+                                                       width: 28, height: 28))
+        resizeHandle.autoresizingMask = [.minXMargin, .minYMargin]
+        paper.addSubview(resizeHandle)
         applyStyle()
         ensureVisible()
         ready = true
