@@ -1,6 +1,6 @@
 # desktop-notes
 
-Paper-like sticky notes for the macOS desktop, built with Swift and AppKit.
+Minimal white sticky notes for the macOS desktop, built with Swift and AppKit.
 No external dependencies, accounts, or cloud sync. The current interface is in Russian.
 
 ## Getting started
@@ -21,16 +21,16 @@ The build script targets the architecture of your current Mac.
 - Create a note from the menu bar, or press ⌘N while the app is active.
 - Write directly on the paper; press ⌘Z to undo an edit.
 - Drag the white margin to move a note, or drag an edge to resize it.
-- Choose from six pastel colors using the palette button.
-- Use the pin to switch between the desktop and floating above other windows.
-- Swipe horizontally with two fingers over the white margin, click minus,
-  or press ⌘W to hide a note.
+- The first line becomes a heading; the rest stays small and readable.
+- Open the ellipsis menu for new notes, floating above windows, hiding, and trash.
+- Swipe horizontally with two fingers over the margin or press ⌘W to hide a note.
 - Restore hidden notes from the menu bar. The trash action moves a note
   into a recoverable trash menu.
 
-Notes appear across Spaces. Text, color, size, position, and visibility
+Notes appear across Spaces. Text, size, position, and visibility
 are saved automatically on your Mac in
 `~/Library/Application Support/DesktopNotes/notes.json`.
+Legacy color values are retained in storage; all notes now use a white surface.
 If this file cannot be read, the app leaves the original untouched.
 
 ## Development
