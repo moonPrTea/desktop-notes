@@ -60,6 +60,7 @@ extension AppDelegate {
         menu.addItem(.separator())
         let trashItem = menu.addItem(withTitle: "Корзина (\(deleted.count))", action: nil, keyEquivalent: "")
         trashItem.submenu = trash
+        add("Добавить виджет…", #selector(showWidgetHelp), to: menu)
         add("Как пользоваться", #selector(showHelp), to: menu)
         menu.addItem(.separator())
         menu.addItem(withTitle: "Завершить", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
@@ -76,6 +77,17 @@ extension AppDelegate {
         let alert = NSAlert()
         alert.messageText = "Маленькие листики. Большие идеи."
         alert.informativeText = "Пиши прямо на листике. Перетаскивай за белое поле, меняй размер за край.\n\nМеню «…» позволяет создать заметку, скрыть её, переместить в корзину или включить «Поверх окон».\n\nСмахни двумя пальцами по белому полю или нажми ⌘W, чтобы спрятать. Верни через меню в строке macOS.\n\nУдалённые листики можно вернуть из корзины. Всё сохраняется на этом Mac автоматически.\n\n⌘N — новый листик · ⌘W — спрятать · ⌘Z — отменить правку."
+        alert.runModal()
+    }
+
+    @objc private func showWidgetHelp() {
+        let alert = NSAlert()
+        alert.messageText = "Виджет на рабочем столе"
+        if Bundle.main.object(forInfoDictionaryKey: "AppGroupIdentifier") != nil {
+            alert.informativeText = "Нажми правой кнопкой на рабочем столе → «Изменить виджеты» → Desktop Notes. Выбери размер и добавь виджет.\n\nНажми правой кнопкой на виджете → «Изменить виджет», чтобы выбрать заметку. Нажатие на сам виджет открывает редактор.\n\nОкна заметок можно скрыть: виджеты продолжат показывать текст даже после завершения приложения. macOS управляет временем их обновления."
+        } else {
+            alert.informativeText = "Эта локальная сборка содержит только окна заметок. Системный виджет собирается из DesktopNotes.xcodeproj в полном Xcode с выбранной командой подписи. Инструкция — в README репозитория."
+        }
         alert.runModal()
     }
 }
