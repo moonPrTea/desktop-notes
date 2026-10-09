@@ -1,46 +1,47 @@
 # desktop-notes
 
-Нативные бумажные листики для рабочего стола macOS. Swift + AppKit,
-без внешних зависимостей, аккаунтов и облачной синхронизации.
+Paper-like sticky notes for the macOS desktop, built with Swift and AppKit.
+No external dependencies, accounts, or cloud sync. The current interface is in Russian.
 
-## Запуск
+## Getting started
 
-Нужны macOS 13+ и Swift 6 (Xcode или Command Line Tools).
+Requires macOS 13+ and Swift 6 (Xcode or Command Line Tools).
 
 ```sh
 bash scripts/build-app.sh
 open "dist/Desktop Notes.app"
 ```
 
-Готовое приложение можно перенести в «Программы». Оно живёт в строке меню,
-без значка в Dock. Сборка локально подписывается ad hoc, без нотариализации.
-Скрипт собирает приложение для архитектуры текущего Mac.
+Move the built app to Applications if you like. It lives in the menu bar,
+without a Dock icon. Local builds are ad hoc signed and are not notarized.
+The build script targets the architecture of your current Mac.
 
-## Листики
+## Using notes
 
-- Создавай через значок в строке меню или ⌘N, когда приложение активно.
-- Пиши прямо на листике; ⌘Z отменяет редактирование.
-- Перетаскивай за белое поле, меняй размер за край окна.
-- Палитра предлагает шесть пастельных цветов.
-- Булавка переключает между рабочим столом и положением поверх окон.
-- Смахни двумя пальцами по белому полю, нажми минус или ⌘W, чтобы скрыть.
-- Верни скрытый листик через меню. «В корзину» убирает листик в корзину,
-  откуда его тоже можно восстановить.
+- Create a note from the menu bar, or press ⌘N while the app is active.
+- Write directly on the paper; press ⌘Z to undo an edit.
+- Drag the white margin to move a note, or drag an edge to resize it.
+- Choose from six pastel colors using the palette button.
+- Use the pin to switch between the desktop and floating above other windows.
+- Swipe horizontally with two fingers over the white margin, click minus,
+  or press ⌘W to hide a note.
+- Restore hidden notes from the menu bar. The trash action moves a note
+  into a recoverable trash menu.
 
-Листики доступны на всех рабочих пространствах. Текст, цвет, размер,
-положение и состояние сохраняются автоматически на этом Mac в
+Notes appear across Spaces. Text, color, size, position, and visibility
+are saved automatically on your Mac in
 `~/Library/Application Support/DesktopNotes/notes.json`.
-При ошибке чтения приложение не перезаписывает исходный файл.
+If this file cannot be read, the app leaves the original untouched.
 
-## Разработка
+## Development
 
 ```sh
 swift build
 bash scripts/test.sh
 ```
 
-Модель и хранилище отделены от окон, рисования и меню. Тесты проверяют
-сохранение, восстановление, повреждённые данные и ошибки записи.
-Скрипт тестов находит Swift Testing и при установленном только Command Line Tools.
-Коммиты: до 200 добавленных и удалённых строк суммарно; короткое описание
-с маленькой буквы. Локальная почта автора: `masapodolina@icloud.com`.
+The model and persistence layer are separate from windows, drawing, and menus.
+Tests cover persistence, recovery, corrupted files, and write failures.
+The test script also locates Swift Testing in standalone Command Line Tools.
+Keep commits under 200 added and deleted lines combined, with a short,
+lowercase subject. Repository author email: `masapodolina@icloud.com`.
