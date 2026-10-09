@@ -76,14 +76,13 @@ final class NoteWindow: NSPanel, NSWindowDelegate, NSTextViewDelegate {
     }
 
     func applyStyle() {
-        paper.color = note.color
-        editor.insertionPointColor = note.color.ink
+        editor.insertionPointColor = .black
         // Desktop level keeps paper below regular application windows.
         level = note.isPinned ? .floating : NSWindow.Level(
             rawValue: Int(CGWindowLevelForKey(.desktopIconWindow)) + 1)
-        for control in controls { control.contentTintColor = note.color.ink }
-        controls.first?.image = NSImage(systemSymbolName: note.isPinned ? "pin.fill" : "pin",
-                                        accessibilityDescription: "Поверх окон")
+        for control in controls {
+            control.contentTintColor = NSColor(calibratedWhite: 0.45, alpha: 1)
+        }
     }
 
     func ensureVisible() {
