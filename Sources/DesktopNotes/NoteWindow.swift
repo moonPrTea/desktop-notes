@@ -5,7 +5,7 @@ final class NoteWindow: NSPanel, NSWindowDelegate, NSTextViewDelegate {
     var onChange: ((Note) -> Void)?
     var onNew: (() -> Void)?
     let paper = PaperView()
-    let editor = NSTextView()
+    let editor = NoteEditor()
     let scroll = NSScrollView()
     var controls: [NSButton] = []
     private var ready = false
@@ -41,10 +41,11 @@ final class NoteWindow: NSPanel, NSWindowDelegate, NSTextViewDelegate {
     }
 
     private func configureEditor() {
-        scroll.frame = NSRect(x: 39, y: 89, width: frame.width - 78, height: frame.height - 148)
+        scroll.frame = NSRect(x: 34, y: 61, width: frame.width - 68, height: frame.height - 100)
         scroll.autoresizingMask = [.width, .height]
         scroll.drawsBackground = false
         scroll.hasVerticalScroller = true
+        scroll.autohidesScrollers = true
         scroll.scrollerStyle = .overlay
         scroll.borderType = .noBorder
         editor.frame = NSRect(origin: .zero, size: scroll.contentSize)
@@ -63,12 +64,13 @@ final class NoteWindow: NSPanel, NSWindowDelegate, NSTextViewDelegate {
         editor.allowsUndo = true
         editor.isAutomaticQuoteSubstitutionEnabled = true
         editor.isAutomaticSpellingCorrectionEnabled = false
-        editor.font = NSFont(name: "Avenir Next", size: 19) ?? .systemFont(ofSize: 19)
-        editor.textColor = NSColor(srgbRed: 0.22, green: 0.22, blue: 0.23, alpha: 1)
+        editor.font = .systemFont(ofSize: 15)
+        editor.textColor = NSColor(calibratedWhite: 0.25, alpha: 1)
         let paragraph = NSMutableParagraphStyle()
-        paragraph.lineSpacing = 5
+        paragraph.lineSpacing = 4
         editor.defaultParagraphStyle = paragraph
         editor.string = note.text
+        editor.formatText()
         editor.delegate = self
         editor.setAccessibilityLabel("Текст листика")
         scroll.documentView = editor
@@ -97,6 +99,7 @@ final class NoteWindow: NSPanel, NSWindowDelegate, NSTextViewDelegate {
     }
 
     func textDidChange(_ notification: Notification) {
+        editor.formatText()
         note.text = editor.string
         title = note.title
         onChange?(note)
