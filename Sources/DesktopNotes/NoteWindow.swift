@@ -23,7 +23,7 @@ final class NoteWindow: NSPanel, NSWindowDelegate, NSTextViewDelegate {
         hasShadow = false
         hidesOnDeactivate = false
         isFloatingPanel = false
-        minSize = NSSize(width: 280, height: 280)
+        minSize = NSSize(width: 240, height: 180)
         maxSize = NSSize(width: 700, height: 850)
         collectionBehavior = [.canJoinAllSpaces, .stationary, .fullScreenAuxiliary]
         appearance = NSAppearance(named: .aqua)
@@ -45,7 +45,7 @@ final class NoteWindow: NSPanel, NSWindowDelegate, NSTextViewDelegate {
     }
 
     private func configureEditor() {
-        scroll.frame = NSRect(x: 34, y: 61, width: frame.width - 68, height: frame.height - 100)
+        scroll.frame = NSRect(x: 34, y: 61, width: frame.width - 68, height: frame.height - 112)
         scroll.autoresizingMask = [.width, .height]
         scroll.drawsBackground = false
         scroll.hasVerticalScroller = true
