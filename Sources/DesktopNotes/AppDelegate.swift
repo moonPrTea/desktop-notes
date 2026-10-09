@@ -3,6 +3,7 @@ import AppKit
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     let store = NoteStore()
+    let widgetBridge = WidgetBridge()
     var windows: [UUID: NoteWindow] = [:]
     var statusItem: NSStatusItem!
     private var errorPresented = false
@@ -10,6 +11,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         installMenus()
         store.onError = { [weak self] error in self?.presentError(error) }
+        store.onSave = { [weak self] notes in self?.widgetBridge.publish(notes) }
         guard store.loadError == nil else {
             let alert = NSAlert()
             alert.messageText = "Не удалось прочитать листики"
@@ -28,6 +30,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             let window = makeWindow(note)
             if !note.isHidden { window.orderFront(nil) }
         }
+        widgetBridge.publish(store.notes)
         NotificationCenter.default.addObserver(self, selector: #selector(screensChanged),
             name: NSApplication.didChangeScreenParametersNotification, object: nil)
     }
@@ -78,7 +81,23 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         if store.loadError != nil { return .terminateNow }
-        return store.flush() ? .terminateNow : .terminateCancel
+        guard store.flush() else { return .terminateCancel }
+        widgetBridge.flushReload()
+        return .terminateNow
+    }
+
+    func application(_ application: NSApplication, open urls: [URL]) {
+        guard store.loadError == nil else { return }
+        for url in urls {
+            if let id = WidgetNote.id(from: url), let note = store.note(id), !note.isDeleted {
+                let window = makeWindow(note)
+                window.showNote()
+                // A widget click opens an editor above other apps without changing its saved mode.
+                window.level = .floating
+            } else if url.scheme == "desktop-notes", url.host == "new" {
+                createNote()
+            }
+        }
     }
 
     private func presentError(_ error: Error) {

@@ -107,6 +107,7 @@ final class NoteWindow: NSPanel, NSWindowDelegate, NSTextViewDelegate {
 
     func windowDidMove(_ notification: Notification) { saveFrame() }
     func windowDidResize(_ notification: Notification) { saveFrame() }
+    func windowDidResignKey(_ notification: Notification) { applyStyle() }
 
     private func saveFrame() {
         guard ready else { return }

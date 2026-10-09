@@ -6,6 +6,7 @@ final class NoteStore {
     private let url: URL
     private var pendingSave: Task<Void, Never>?
     var onError: ((Error) -> Void)?
+    var onSave: (([Note]) -> Void)?
     private(set) var loadError: Error?
 
     init(url: URL? = nil) {
@@ -45,6 +46,7 @@ final class NoteStore {
             let encoder = JSONEncoder()
             encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
             try encoder.encode(notes).write(to: url, options: .atomic)
+            onSave?(notes)
             return true
         } catch {
             onError?(error)
