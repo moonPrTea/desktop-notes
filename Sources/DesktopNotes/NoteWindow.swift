@@ -49,13 +49,13 @@ final class NoteWindow: NSPanel, NSWindowDelegate, NSTextViewDelegate {
         scroll.borderType = .noBorder
         editor.frame = NSRect(origin: .zero, size: scroll.contentSize)
         editor.minSize = NSSize(width: 0, height: scroll.contentSize.height)
-        editor.maxSize = NSSize(width: .greatestFiniteMagnitude, height: .greatestFiniteMagnitude)
+        editor.maxSize = NSSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
         editor.isVerticallyResizable = true
         editor.isHorizontallyResizable = false
         editor.autoresizingMask = [.width]
         editor.textContainer?.widthTracksTextView = true
         editor.textContainer?.containerSize = NSSize(width: scroll.contentSize.width,
-                                                     height: .greatestFiniteMagnitude)
+                                                     height: CGFloat.greatestFiniteMagnitude)
         editor.textContainerInset = NSSize(width: 0, height: 6)
         editor.textContainer?.lineFragmentPadding = 0
         editor.drawsBackground = false
