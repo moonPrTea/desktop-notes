@@ -1,0 +1,121 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+		97F6EA7A2C9A534BC6500904 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		C4876BE903ED0118BC065610 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/AppMenus.swift"; sourceTree = SOURCE_ROOT; };
+		486411264CC70425BF73C516 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/Note.swift"; sourceTree = SOURCE_ROOT; };
+		105151809085FD1918AA5A19 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/NoteControls.swift"; sourceTree = SOURCE_ROOT; };
+		BF78EE8679CBEBA196BB872E = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/NoteEditor.swift"; sourceTree = SOURCE_ROOT; };
+		9D2C1E936F9DB47F046D5C73 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/NoteStore.swift"; sourceTree = SOURCE_ROOT; };
+		1BCB5743F72C7AA7031DBBD1 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/NoteWindow.swift"; sourceTree = SOURCE_ROOT; };
+		4298FE2F3EB5551DB80277E3 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/PaperView.swift"; sourceTree = SOURCE_ROOT; };
+		F68549497E1033F9F9845EB1 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/WidgetBridge.swift"; sourceTree = SOURCE_ROOT; };
+		F93A8195F0BF113DA7F18D24 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/WidgetSnapshot.swift"; sourceTree = SOURCE_ROOT; };
+		1E45D7DAFDB703A5BF3D3AE6 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/DesktopNotes/main.swift"; sourceTree = SOURCE_ROOT; };
+		3988966C20D0C4B8A796D036 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Widget/DesktopNoteWidget.swift"; sourceTree = SOURCE_ROOT; };
+		74CCDDABF8AD9BE23D30660E = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Widget/NoteConfiguration.swift"; sourceTree = SOURCE_ROOT; };
+		F26F7D7A7E61F2DBA5E371B1 = { isa = PBXBuildFile; fileRef = 97F6EA7A2C9A534BC6500904; };
+		9BB1E0282F6E7D896A25F2AB = { isa = PBXBuildFile; fileRef = C4876BE903ED0118BC065610; };
+		FA252D6378B700CE2CB65C03 = { isa = PBXBuildFile; fileRef = 486411264CC70425BF73C516; };
+		18725B9365659D5E81CB68B9 = { isa = PBXBuildFile; fileRef = 105151809085FD1918AA5A19; };
+		F929D5D7E3BAFBA6EE4A6BDA = { isa = PBXBuildFile; fileRef = BF78EE8679CBEBA196BB872E; };
+		D036F453341E8FA0358B03E9 = { isa = PBXBuildFile; fileRef = 9D2C1E936F9DB47F046D5C73; };
+		119888DC23236DD0580CA0F7 = { isa = PBXBuildFile; fileRef = 1BCB5743F72C7AA7031DBBD1; };
+		6CDF80331686F0F9BD27ACFD = { isa = PBXBuildFile; fileRef = 4298FE2F3EB5551DB80277E3; };
+		238F1AAD301D65C6214399E5 = { isa = PBXBuildFile; fileRef = F68549497E1033F9F9845EB1; };
+		7B0053AC99378924A8941AA0 = { isa = PBXBuildFile; fileRef = F93A8195F0BF113DA7F18D24; };
+		D53B38D8ED1EBEAFB1848C94 = { isa = PBXBuildFile; fileRef = 1E45D7DAFDB703A5BF3D3AE6; };
+		FDBEB636160CC4A63F780304 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (F26F7D7A7E61F2DBA5E371B1, 9BB1E0282F6E7D896A25F2AB, FA252D6378B700CE2CB65C03, 18725B9365659D5E81CB68B9, F929D5D7E3BAFBA6EE4A6BDA, D036F453341E8FA0358B03E9, 119888DC23236DD0580CA0F7, 6CDF80331686F0F9BD27ACFD, 238F1AAD301D65C6214399E5, 7B0053AC99378924A8941AA0, D53B38D8ED1EBEAFB1848C94,); runOnlyForDeploymentPostprocessing = 0; };
+		FA3C5073B463D1BB4154A72F = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		5EBDE3B9A18280FAB6817F2D = { isa = PBXBuildFile; fileRef = 3988966C20D0C4B8A796D036; };
+		169023A63AE1F16CB6EB177A = { isa = PBXBuildFile; fileRef = 74CCDDABF8AD9BE23D30660E; };
+		302FDA632E57217F0B8C714E = { isa = PBXBuildFile; fileRef = F93A8195F0BF113DA7F18D24; };
+		36EAA24BF82756C56BFFA238 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (5EBDE3B9A18280FAB6817F2D, 169023A63AE1F16CB6EB177A, 302FDA632E57217F0B8C714E,); runOnlyForDeploymentPostprocessing = 0; };
+		B3F3E8956F14A6641B91CD6D = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		8CEDA7969DF3E20018ADE29A = { isa = PBXFileReference; explicitFileType = wrapper.application; path = "Desktop Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADF921D260A826D3C6D369AE = { isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; path = DesktopNotesWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		19CF065D157C139FAFB4CF68 = { isa = PBXBuildFile; fileRef = ADF921D260A826D3C6D369AE; settings = { ATTRIBUTES = (RemoveHeadersOnCopy,); }; };
+		2F933BA841895383DA49EE9D = { isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; dstPath = ""; dstSubfolderSpec = 13; files = (19CF065D157C139FAFB4CF68,); name = "Embed App Extensions"; runOnlyForDeploymentPostprocessing = 0; };
+		BB2660074873DE3623B49862 = { isa = PBXContainerItemProxy; containerPortal = 98F54143AB4E86B28C3AFEE0; proxyType = 1; remoteGlobalIDString = 1D98968079D70DD7C71212B2; remoteInfo = DesktopNotesWidget; };
+		DE58E2B17C19600779694943 = { isa = PBXTargetDependency; target = 1D98968079D70DD7C71212B2; targetProxy = BB2660074873DE3623B49862; };
+		679D4E7F0BF78E2DB7F85A4B = { isa = PBXGroup; children = (97F6EA7A2C9A534BC6500904, C4876BE903ED0118BC065610, 486411264CC70425BF73C516, 105151809085FD1918AA5A19, BF78EE8679CBEBA196BB872E, 9D2C1E936F9DB47F046D5C73, 1BCB5743F72C7AA7031DBBD1, 4298FE2F3EB5551DB80277E3, F68549497E1033F9F9845EB1, F93A8195F0BF113DA7F18D24, 1E45D7DAFDB703A5BF3D3AE6, 3988966C20D0C4B8A796D036, 74CCDDABF8AD9BE23D30660E,); name = Sources; sourceTree = "<group>"; };
+		00C45FD35CB0F9C5F764F070 = { isa = PBXGroup; children = (8CEDA7969DF3E20018ADE29A, ADF921D260A826D3C6D369AE,); name = Products; sourceTree = "<group>"; };
+		DF891E785808226D241F246E = { isa = PBXGroup; children = (679D4E7F0BF78E2DB7F85A4B, 00C45FD35CB0F9C5F764F070,); sourceTree = "<group>"; };
+		B645626E2FC3DB45E109AAC5 = { isa = PBXNativeTarget; buildConfigurationList = BF6B243F84FA915024E66DCC; buildPhases = (FDBEB636160CC4A63F780304, FA3C5073B463D1BB4154A72F, 2F933BA841895383DA49EE9D,); buildRules = (); dependencies = (DE58E2B17C19600779694943,); name = DesktopNotes; productName = "Desktop Notes"; productReference = 8CEDA7969DF3E20018ADE29A; productType = "com.apple.product-type.application"; };
+		1D98968079D70DD7C71212B2 = { isa = PBXNativeTarget; buildConfigurationList = 806BCDA37F5CC1FE56E169CA; buildPhases = (36EAA24BF82756C56BFFA238, B3F3E8956F14A6641B91CD6D,); buildRules = (); dependencies = (); name = DesktopNotesWidget; productName = "DesktopNotesWidget"; productReference = ADF921D260A826D3C6D369AE; productType = "com.apple.product-type.app-extension"; };
+		AB52CB08E0FDF02BF6C67C33 = {
+			isa = XCBuildConfiguration; name = Debug; buildSettings = {
+				CLANG_ENABLE_MODULES = "YES";
+				MACOSX_DEPLOYMENT_TARGET = "14.0";
+				SDKROOT = "macosx";
+				SWIFT_VERSION = "6.0";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				CODE_SIGN_STYLE = "Automatic";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = "YES";
+			};
+		};
+		EF00B4C26D3BA245CBAB3F00 = {
+			isa = XCBuildConfiguration; name = Debug; buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moonprtea.desktop-notes";
+				PRODUCT_NAME = "Desktop Notes";
+				EXECUTABLE_NAME = "DesktopNotes";
+				INFOPLIST_FILE = "Configuration/App-Info.plist";
+				CODE_SIGN_ENTITLEMENTS = "Configuration/App.entitlements";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+			};
+		};
+		A5F76F131F0062F90BEF60DA = {
+			isa = XCBuildConfiguration; name = Debug; buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moonprtea.desktop-notes.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Configuration/Widget-Info.plist";
+				CODE_SIGN_ENTITLEMENTS = "Configuration/Widget.entitlements";
+				APPLICATION_EXTENSION_API_ONLY = "YES";
+				SKIP_INSTALL = "YES";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+			};
+		};
+		5283471FF90C511CFE244FFF = {
+			isa = XCBuildConfiguration; name = Release; buildSettings = {
+				CLANG_ENABLE_MODULES = "YES";
+				MACOSX_DEPLOYMENT_TARGET = "14.0";
+				SDKROOT = "macosx";
+				SWIFT_VERSION = "6.0";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				CODE_SIGN_STYLE = "Automatic";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = "YES";
+			};
+		};
+		49B4940C5F901788C278DD41 = {
+			isa = XCBuildConfiguration; name = Release; buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moonprtea.desktop-notes";
+				PRODUCT_NAME = "Desktop Notes";
+				EXECUTABLE_NAME = "DesktopNotes";
+				INFOPLIST_FILE = "Configuration/App-Info.plist";
+				CODE_SIGN_ENTITLEMENTS = "Configuration/App.entitlements";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+			};
+		};
+		CA26578A15E7534361BF6A1F = {
+			isa = XCBuildConfiguration; name = Release; buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "com.moonprtea.desktop-notes.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Configuration/Widget-Info.plist";
+				CODE_SIGN_ENTITLEMENTS = "Configuration/Widget.entitlements";
+				APPLICATION_EXTENSION_API_ONLY = "YES";
+				SKIP_INSTALL = "YES";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+			};
+		};
+		4BA304E783CFBB9FA6E56552 = { isa = XCConfigurationList; buildConfigurations = (AB52CB08E0FDF02BF6C67C33, 5283471FF90C511CFE244FFF,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		BF6B243F84FA915024E66DCC = { isa = XCConfigurationList; buildConfigurations = (EF00B4C26D3BA245CBAB3F00, 49B4940C5F901788C278DD41,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		806BCDA37F5CC1FE56E169CA = { isa = XCConfigurationList; buildConfigurations = (A5F76F131F0062F90BEF60DA, CA26578A15E7534361BF6A1F,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		98F54143AB4E86B28C3AFEE0 = { isa = PBXProject; attributes = { BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 1600; }; buildConfigurationList = 4BA304E783CFBB9FA6E56552; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base, ru,); mainGroup = DF891E785808226D241F246E; productRefGroup = 00C45FD35CB0F9C5F764F070; projectDirPath = ""; projectRoot = ""; targets = (B645626E2FC3DB45E109AAC5, 1D98968079D70DD7C71212B2,); };
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0;
+}
